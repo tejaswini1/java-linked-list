@@ -22,7 +22,7 @@ public class LinkedList {
         Node newNode = new Node(data);
 
         if (index == 0) {
-            this.start = newNode;
+            setStart(newNode);
             return;
         }
 
@@ -31,13 +31,13 @@ public class LinkedList {
         }
 
         if (currentNode.getNextNode() == null)
-            this.end = newNode;
+            setEnd(newNode);
 
         newNode.setNextNode(currentNode.getNextNode());
         currentNode.setNextNode(newNode);
     }
 
-    public void setStart(Node start) {
+    private void setStart(Node start) {
         this.start = start;
     }
 
@@ -45,7 +45,7 @@ public class LinkedList {
         return start;
     }
 
-    public void setEnd(Node end) {
+    private void setEnd(Node end) {
         this.end = end;
     }
 
