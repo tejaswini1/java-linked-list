@@ -5,9 +5,9 @@ public class LinkedList {
     private Node start;
     private Node end;
 
-    public void add(Object node) {
+    public void add(Object data) {
 
-        Node newNode = new Node(node);
+        Node newNode = new Node(data);
 
         if (start == null) {
             setStart(newNode);
