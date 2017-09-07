@@ -17,6 +17,26 @@ public class LinkedList {
         setEnd(newNode);
     }
 
+    public void addAt(Object data, int index) {
+        Node currentNode = this.start;
+        Node newNode = new Node(data);
+
+        if (index == 0) {
+            this.start = newNode;
+            return;
+        }
+
+        for (int i = 1; i < index; i++) {
+            currentNode = currentNode.getNextNode();
+        }
+
+        if (currentNode.getNextNode() == null)
+            this.end = newNode;
+
+        newNode.setNextNode(currentNode.getNextNode());
+        currentNode.setNextNode(newNode);
+    }
+
     public void setStart(Node start) {
         this.start = start;
     }

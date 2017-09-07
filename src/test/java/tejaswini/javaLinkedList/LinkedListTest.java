@@ -25,7 +25,30 @@ public class LinkedListTest {
     public void shouldSetEndVariablesToNewObject () {
         list.add("hey");
 
-        assertNotEquals(list.getEnd(), list.getStart());
+        assertEquals(list.getEnd().toString(), new Node("hey").toString());
+        assertEquals(list.getStart().toString(), new Node("Hello").toString());
+    }
+
+    @Test
+    public void shouldSetEndAndStartValueAccordingly(){
+        list.add(1234);
+        list.add("world");
+
+        list.addAt(3L, 3);
+
+        assertEquals(list.getEnd().toString(), new Node(3L).toString());
+        assertEquals(list.getStart().toString(), new Node("Hello").toString());
+
+        list.addAt("abcd", 2);
+
+        assertEquals(list.getEnd().toString(), new Node(3L).toString());
+        assertEquals(list.getStart().toString(), new Node("Hello").toString());
+
+        list.addAt("first", 0);
+
+        assertEquals(list.getEnd().toString(), new Node(3L).toString());
+        assertEquals(list.getStart().toString(), new Node("first").toString());
+
     }
 
 }
