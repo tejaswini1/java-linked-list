@@ -5,13 +5,13 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class LinkedListTest {
+public class LinkedListTest<T> {
 
         LinkedList list;
 
     @Before
     public void setup() throws Exception{
-        list =  new LinkedList();
+        list =  new LinkedList<T>();
         list.add("Hello");
 
     }
@@ -31,22 +31,22 @@ public class LinkedListTest {
 
     @Test
     public void shouldSetEndAndStartValueAccordingly(){
-        list.add(1234);
+        list.add("1234");
         list.add("world");
 
-        list.addAt(3L, 3);
+        list.addAt("it works", 3);
 
-        assertEquals(list.getEnd().toString(), new Node(3L).toString());
+        assertEquals(list.getEnd().toString(), new Node("it works").toString());
         assertEquals(list.getStart().toString(), new Node("Hello").toString());
 
         list.addAt("abcd", 2);
 
-        assertEquals(list.getEnd().toString(), new Node(3L).toString());
+        assertEquals(list.getEnd().toString(), new Node("it works").toString());
         assertEquals(list.getStart().toString(), new Node("Hello").toString());
 
         list.addAt("first", 0);
 
-        assertEquals(list.getEnd().toString(), new Node(3L).toString());
+        assertEquals(list.getEnd().toString(), new Node("it works").toString());
         assertEquals(list.getStart().toString(), new Node("first").toString());
 
     }

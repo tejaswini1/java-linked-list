@@ -1,11 +1,11 @@
 package tejaswini.javaLinkedList;
 
-public class LinkedList {
+public class LinkedList<T> {
 
     private Node start;
     private Node end;
 
-    public void add(Object data) {
+    public void add(T data) {
 
         Node newNode = new Node(data);
 
@@ -17,7 +17,7 @@ public class LinkedList {
         setEnd(newNode);
     }
 
-    public void addAt(Object data, int index) {
+    public void addAt(T data, int index) {
         Node currentNode = this.start;
         Node newNode = new Node(data);
 
