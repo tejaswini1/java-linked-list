@@ -18,6 +18,7 @@ public class LinkedList<T> {
     }
 
     public void addAt(T data, int index) {
+
         Node currentNode = this.start;
         Node newNode = new Node(data);
 
@@ -27,7 +28,12 @@ public class LinkedList<T> {
         }
 
         for (int i = 1; i < index; i++) {
-            currentNode = currentNode.getNextNode();
+            try {
+                currentNode = currentNode.getNextNode();
+            } catch (Exception e) {
+                System.out.println(" Please enter proper index " + e);
+                return;
+            }
         }
 
         if (currentNode.getNextNode() == null)
