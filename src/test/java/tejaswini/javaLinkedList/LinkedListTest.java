@@ -5,13 +5,13 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class LinkedListTest<T> {
+public class LinkedListTest {
 
-        LinkedList list;
+        LinkedList<String> list;
 
     @Before
     public void setup() throws Exception{
-        list =  new LinkedList<T>();
+        list =  new LinkedList<String>();
         list.add("Hello");
 
     }
